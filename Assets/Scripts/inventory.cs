@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class inventory : MonoBehaviour {
 
-	class invObj {
-		string name;
+	public GameObject rock;
+
+	public class invObj {
+		public string name;
 		int amount;
 
 		public invObj (string n, int q) {
 			name = n;
+
 			amount = q;
 		}
 	}
 
-	List<invObj> inv;
+	public List<invObj> inv;
 
 	public void AddToList (string n, int q) {
 		inv.Add(new invObj(n,q));
@@ -25,7 +28,6 @@ public class inventory : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetKeyDown(KeyCode.A)) {
-		}
+		
 	}
 }

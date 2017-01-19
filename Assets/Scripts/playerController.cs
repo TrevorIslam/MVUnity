@@ -23,7 +23,7 @@ public class playerController : NetworkBehaviour {
 
 		float hor = Input.GetAxisRaw ("Horizontal");
 		float ver = Input.GetAxisRaw ("Vertical");
-        float rot = Input.GetAxis("Mouse X");
+        float rot = Input.GetAxis("Mouse X");	
 
 		Vector3 movement = new Vector3 (hor, 0, ver);
 
