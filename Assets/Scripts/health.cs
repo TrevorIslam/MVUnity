@@ -27,7 +27,4 @@ public class health : MonoBehaviour {
 		healthBar.value = hp / maxHealth;
 		HealthText.text = hp + "/" + maxHealth;
 	}
-
-	void Update () {
-	}
 }

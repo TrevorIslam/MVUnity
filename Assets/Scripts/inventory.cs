@@ -5,6 +5,8 @@ using UnityEngine;
 public class inventory : MonoBehaviour {
 
 	public GameObject rock;
+	public GameObject[] invList;
+	int counter;
 
 	public class invObj {
 		public string name;
@@ -25,6 +27,7 @@ public class inventory : MonoBehaviour {
 
 	void Start () {
 		inv = new List<invObj> ();
+		counter = 0;
 	}
 
 	void Update() {
