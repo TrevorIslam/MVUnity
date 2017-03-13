@@ -5,7 +5,6 @@ using UnityEngine;
 public class offlinePlayerC : MonoBehaviour {
 	public GameObject rock;
 	public GameObject stick;
-	public GameObject invUI;
 	public GameObject grid;
 	public GameObject hud;
 	inventory inven;
@@ -16,8 +15,10 @@ public class offlinePlayerC : MonoBehaviour {
 		inven = this.GetComponent<inventory> ();
 		temprock = GameObject.Find ("HUD/Panel/Rock");
 		tempstick = GameObject.Find ("HUD/Panel/Stick");
+
 		temprock.SetActive (false);
 		tempstick.SetActive (false);
+		GameObject.Find ("HUD/Panel").SetActive (false);
 	}
 
 	void Update () {
@@ -32,9 +33,11 @@ public class offlinePlayerC : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "stick") {
 			CollideWithItem (other.gameObject);
+			tempstick.SetActive (true);
 		}
 		if (other.gameObject.tag == "rock") {
 			CollideWithItem (other.gameObject);
+			temprock.SetActive (true);
 
 		}
 
@@ -42,10 +45,8 @@ public class offlinePlayerC : MonoBehaviour {
 	}
 
 	void CollideWithItem (GameObject tag) {
-		Debug.Log (tag.tag.ToString());
-		Debug.Log (temprock.ToString());
 		inven.AddToList (tag.tag, 1);
-		temprock.transform.position = inven.invList[0].transform.position;
-		temprock.SetActive (true);
+		//temprock.transform.position = inven.invList[0].transform.position;
+
 	}
 }
