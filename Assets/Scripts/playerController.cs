@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System;
 
 [AddComponentMenu("Camera/Simple Smooth Mouse Look ")]
-public class PlayerController : MonoBehaviour {
+public class playerController : MonoBehaviour {
 	Vector2 _mouseAbsolute;
 	Vector2 _smoothMouse;
 

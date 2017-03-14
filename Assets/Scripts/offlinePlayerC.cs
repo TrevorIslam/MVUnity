@@ -34,10 +34,12 @@ public class offlinePlayerC : MonoBehaviour {
 		if (other.gameObject.tag == "stick") {
 			CollideWithItem (other.gameObject);
 			tempstick.SetActive (true);
+			other.gameObject.SetActive (false);
 		}
 		if (other.gameObject.tag == "rock") {
 			CollideWithItem (other.gameObject);
 			temprock.SetActive (true);
+			other.gameObject.SetActive (false);
 
 		}
 
